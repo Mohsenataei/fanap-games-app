@@ -71,8 +71,7 @@ object NetworkModule {
      */
     @Singleton
     @Provides
-    @WithoutToken
-    fun provideOkHttpClient(headers: Headers, secretFields: SecretFields): OkHttpClient {
+    fun provideOkHttpClient(headers: Headers): OkHttpClient {
         val builder = OkHttpClient.Builder()
         if (BuildConfig.DEBUG) {
             val loggingInterceptor = HttpLoggingInterceptor()
@@ -107,7 +106,7 @@ object NetworkModule {
     @Provides
     @WithoutToken
     fun provideRetrofit(
-        @WithoutToken okHttpClient: OkHttpClient,
+        okHttpClient: OkHttpClient,
         gson: Gson,
         secretFields: SecretFields
     ): Retrofit {

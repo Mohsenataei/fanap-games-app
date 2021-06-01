@@ -46,7 +46,7 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding> : DaggerFrag
     ): View? {
         // initialize binding
         binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-        binding.setLifecycleOwner(this)
+        binding.lifecycleOwner = this
 
         // set viewModel as an observer to this activity lifecycle events
         lifecycle.addObserver(viewModel)

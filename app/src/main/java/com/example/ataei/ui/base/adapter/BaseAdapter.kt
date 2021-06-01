@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.ataei.BR
 
 /**
  * An abstract Adapter that extends [RecyclerView.Adapter] and can be used as base adapter in layouts provided by
@@ -22,7 +23,7 @@ import androidx.recyclerview.widget.RecyclerView
  */
 
 abstract class BaseAdapter<T : Any, B : ViewDataBinding>(
-//    private val itemBindingId: Int = BR.item,
+    private val itemBindingId: Int = BR.item,
     items: List<T> = emptyList(),
     private val onItemClicked: ((T) -> Unit)? = null,
     private val onBind: B.(Int) -> Unit = {}

@@ -2,6 +2,7 @@ package com.example.ataei.di.component
 
 import android.content.Context
 import com.example.ataei.app.GameApplication
+import com.example.ataei.di.builder.ActivityBuilder
 import com.example.ataei.di.module.AppModule
 import com.example.ataei.di.module.NetworkModule
 import dagger.BindsInstance
@@ -19,8 +20,8 @@ import javax.inject.Singleton
     modules = [
         (NetworkModule::class),
         (AppModule::class),
-        (AndroidInjectionModule::class)
-//        (ActivityBuilder::class)
+        (AndroidInjectionModule::class),
+        (ActivityBuilder::class)
     ]
 )
 
