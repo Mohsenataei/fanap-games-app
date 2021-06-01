@@ -16,6 +16,8 @@ class GameRepository @Inject constructor(
     suspend fun getGames(): Either<Error, List<Game>> {
         return safeApiCall {
             gameDataSource.getGames()
-        }.map { it.data }
+        }.map {
+            it.result
+        }
     }
 }

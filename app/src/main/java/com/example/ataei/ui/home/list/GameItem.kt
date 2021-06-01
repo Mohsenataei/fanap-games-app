@@ -4,5 +4,5 @@ data class GameItem(
     val name: String,
     val icon: String? = null,
     val producer: String,
-    val rate: Int
+    val rate: Int = 0
 )

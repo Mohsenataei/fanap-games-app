@@ -80,7 +80,7 @@ abstract class BaseAdapter<T : Any, B : ViewDataBinding>(
      * @see [RecyclerView.Adapter.onBindViewHolder]
      */
     override fun onBindViewHolder(holder: BaseViewHolder<T, B>, position: Int) {
-//        holder.bind(itemBindingId, getItem(position))
+        holder.bind(itemBindingId, getItem(position))
         holder.binding.onBind(position)
     }
 

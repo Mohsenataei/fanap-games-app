@@ -17,22 +17,41 @@ class HomeListViewModel @Inject constructor(
     private val gameRepository: GameRepository
 ) : BaseViewModel() {
 
-    val _games = MutableLiveData<List<Game>>(emptyList())
-    val games: LiveData<List<Game>>
+    private val _games = MutableLiveData<List<GameItem>>(emptyList())
+    val games: LiveData<List<GameItem>>
         get() = _games
+
+
+    init {
+        getGames()
+    }
 
 
     private fun getGames() {
         viewModelScope.launch {
             when (val result = gameRepository.getGames()) {
-                is Right -> _games.value = result.b
+                is Right -> _games.value = mapToGameItems(result.b)
                 is Left -> showError(result.a)
             }
         }
     }
 
+    private fun mapToGameItems(games: List<Game>): List<GameItem> {
+        return games.map { game ->
+            GameItem(
+                game.name,
+                game.preview,
+                game.business.name
+            )
+        }
+    }
+
     private fun showError(error: Error) {
         Log.d(TAG, "showError() called  with: error = [$error]")
+    }
+
+    fun onItemClicked(gameItem: GameItem) {
+        Log.d(TAG, "onItemClicked() called  with: cryptoCurrencyItem = [$gameItem]")
     }
 
     companion object {
