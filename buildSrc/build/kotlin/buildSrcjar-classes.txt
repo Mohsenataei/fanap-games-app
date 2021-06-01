@@ -1,0 +1,1 @@
+C:\Users\Administrator\AndroidStudioProjects\Ataei\buildSrc\build\classes\kotlin\main\ataei\libs\Android.class
