@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Ataei</string>
+    <string name="image_not_found">عکس مورد نظر پیدا نشد</string>
 </resources>

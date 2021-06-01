@@ -19,8 +19,9 @@
         android:onClick="@{() -> viewModel.onItemClicked(item)}">
 
 
-        <ImageView
+        <com.example.ataei.ui.custom.MagicalImageView
             android:id="@+id/iv_game_icon"
+            imageUrl="@{item.icon}"
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:layout_constraintStart_toStartOf="parent"

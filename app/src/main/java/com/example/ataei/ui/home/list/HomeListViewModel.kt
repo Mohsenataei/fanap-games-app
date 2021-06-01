@@ -1,12 +1,14 @@
 package com.example.ataei.ui.home.list
 
 import android.util.Log
+import androidx.databinding.BindingAdapter
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import arrow.core.Either.Left
 import arrow.core.Either.Right
 import com.example.ataei.ui.base.BaseViewModel
+import com.example.ataei.ui.custom.MagicalImageView
 import com.example.data.model.Error
 import com.example.data.model.game.Game
 import com.example.data.repository.GameRepository
@@ -52,6 +54,11 @@ class HomeListViewModel @Inject constructor(
 
     fun onItemClicked(gameItem: GameItem) {
         Log.d(TAG, "onItemClicked() called  with: cryptoCurrencyItem = [$gameItem]")
+    }
+
+    @BindingAdapter("imageUrl")
+    fun bindImageUrl(imageView: MagicalImageView, imageUrl: String) {
+        imageView.setImageUrl(imageUrl)
     }
 
     companion object {
