@@ -17,15 +17,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/sample_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="THIS IS HOME LIST FRAGMENT"
-            app:layout_constraintTop_toTopOf="parent" />
-
+        android:layout_height="match_parent"
+        android:background="@color/darkJungleGreen">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/gameRecyclerView"
@@ -35,10 +28,8 @@
             android:adapter="@{adapter}"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sample_text"
             app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/suggested_game_item" />
 

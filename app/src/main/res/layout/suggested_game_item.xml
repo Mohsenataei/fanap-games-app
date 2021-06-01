@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -13,40 +14,39 @@
             type="com.example.ataei.ui.home.list.HomeListViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.onItemClicked(item)}">
+        android:onClick="@{() -> viewModel.onItemClicked(item)}"
+        android:orientation="vertical">
 
 
         <com.example.ataei.ui.custom.MagicalImageView
             android:id="@+id/iv_game_icon"
-            imageUrl="@{item.icon}"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_game_name"
-            android:layout_width="0dp"
+            style="@style/TextView.ItemStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@{item.name}"
-            app:layout_constraintEnd_toEndOf="@+id/iv_game_icon"
-            app:layout_constraintStart_toStartOf="@id/iv_game_icon"
-            app:layout_constraintTop_toBottomOf="@id/iv_game_icon" />
+            tools:text="sample game name" />
 
         <TextView
             android:id="@+id/tv_game_producer"
-            android:layout_width="0dp"
+            style="@style/TextView.ItemStyle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@{item.producer}"
-            app:layout_constraintEnd_toEndOf="@+id/iv_game_icon"
-            app:layout_constraintStart_toStartOf="@id/iv_game_icon"
-            app:layout_constraintTop_toBottomOf="@id/tv_game_name" />
+            tools:text="sample game producer" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
