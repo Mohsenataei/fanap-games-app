@@ -3,7 +3,7 @@ package ataei.libs
 object Versions {
 
     const val arrow = "0.10.4"
-    const val gradle = "4.0.1"
+    const val gradle = "4.1.1"
     const val ktlint = "0.37.2"
     const val kotlin = "1.3.72"
     const val coroutines = "1.3.3"
