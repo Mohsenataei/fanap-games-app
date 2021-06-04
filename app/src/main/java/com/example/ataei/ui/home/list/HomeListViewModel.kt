@@ -53,12 +53,7 @@ class HomeListViewModel @Inject constructor(
     }
 
     fun onItemClicked(gameItem: GameItem) {
-        Log.d(TAG, "onItemClicked() called  with: cryptoCurrencyItem = [$gameItem]")
-    }
-
-    @BindingAdapter("imageUrl")
-    fun bindImageUrl(imageView: MagicalImageView, imageUrl: String) {
-        imageView.setImageUrl(imageUrl)
+        Log.d(TAG, "onItemClicked() called  with: gamesItem = $gameItem")
     }
 
     companion object {
