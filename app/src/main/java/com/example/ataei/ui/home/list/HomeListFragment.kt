@@ -22,10 +22,7 @@ class HomeListFragment : BaseFragment<HomeListViewModel, FragmentHomeListBinding
         binding.viewModel = viewModel
         binding.adapter = SingleLayoutAdapter<GameItem, SuggestedGameItemBinding>(
             layoutId = R.layout.suggested_game_item,
-            onItemClicked = viewModel::onItemClicked,
-            onBind = {
-                this.viewModel = this@HomeListFragment.viewModel
-            }
+            onItemClicked = viewModel::onItemClicked
         )
 
         viewModel.games.observeSafe(viewLifecycleOwner) {
