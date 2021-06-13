@@ -37,7 +37,10 @@ class HomeListViewModel @Inject constructor(
             _loadingVisibility.value = true
             when (val result = gameRepository.getGames()) {
                 is Right -> _games.value = mapToGameItems(result.b)
-                is Left -> showError(result.a)
+                is Left -> {
+                    _errorLiveData.value = result.a.toString()
+                    showError(result.a)
+                }
             }
 
             _loadingVisibility.value = false

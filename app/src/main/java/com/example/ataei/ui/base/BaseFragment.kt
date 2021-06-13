@@ -61,7 +61,13 @@ abstract class BaseFragment<V : BaseViewModel, B : ViewDataBinding> : DaggerFrag
             viewLifecycleOwner,
             Observer { it?.invoke(requireActivity()) })
         viewModel.fragmentAction.observe(viewLifecycleOwner, Observer { it?.invoke(this) })
+
+        viewModel.errorLiveData.observe(viewLifecycleOwner) {
+            showError(it)
+        }
         onViewInitialized(binding)
     }
+
+    abstract fun showError(message: String)
 
 }
