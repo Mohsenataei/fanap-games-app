@@ -1,6 +1,7 @@
 package com.example.ataei.ui.home.list
 
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.databinding.BindingAdapter
 import com.example.ataei.R
 import com.example.ataei.databinding.FragmentHomeListBinding
@@ -28,6 +29,10 @@ class HomeListFragment : BaseFragment<HomeListViewModel, FragmentHomeListBinding
             binding.adapter?.swapItems(it)
         }
 
+    }
+
+    override fun showError(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
 
 

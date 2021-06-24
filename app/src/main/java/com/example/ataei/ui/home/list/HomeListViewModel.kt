@@ -23,6 +23,9 @@ class HomeListViewModel @Inject constructor(
     val games: LiveData<List<GameItem>>
         get() = _games
 
+    private val _loadingVisibility = MutableLiveData<Boolean>(false)
+    val loadingVisibility: LiveData<Boolean>
+        get() = _loadingVisibility
 
     init {
         getGames()
@@ -31,10 +34,16 @@ class HomeListViewModel @Inject constructor(
 
     private fun getGames() {
         viewModelScope.launch {
+            _loadingVisibility.value = true
             when (val result = gameRepository.getGames()) {
                 is Right -> _games.value = mapToGameItems(result.b)
-                is Left -> showError(result.a)
+                is Left -> {
+                    _errorLiveData.value = result.a.toString()
+                    showError(result.a)
+                }
             }
+
+            _loadingVisibility.value = false
         }
     }
 

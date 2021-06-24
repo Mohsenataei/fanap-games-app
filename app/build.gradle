@@ -47,6 +47,8 @@ dependencies {
     implementation Libs.Common.arrowCore
     implementation Libs.Common.arrowSyntax
     kapt Libs.Common.arrowMeta
+    implementation Libs.Common.progressWheel
+
 
     kapt "com.android.databinding:compiler:3.1.2"
 

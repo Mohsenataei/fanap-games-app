@@ -48,6 +48,8 @@ object Libs {
         const val stetho_OkHttp = "com.facebook.stetho:stetho-okhttp3:${Versions.stetho}"
         const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
         const val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+        const val progressWheel = "com.pnikosis:materialish-progress:${Versions.progressWheel}"
+
     }
 
     object Testing {
