@@ -2,7 +2,7 @@ package com.example.ataei.di.builder
 
 import androidx.lifecycle.ViewModelProvider
 import com.example.ataei.ui.home.HomeViewModelBuilder
-import com.example.ataei.viewmodel.GameViewModelFactory
+import com.example.ataei.ui.base.GameViewModelFactory
 import dagger.Binds
 import dagger.Module
 
